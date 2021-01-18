@@ -1,86 +1,65 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css/formulario.css" media="screen">
-    <title>Cadastro</title>
+    <title>Form Contato</title>
 </head>
+<style>
+    *{margin:0;padding:0;box-sizing: border-box;}
+    body{
+        background-color: rgb(135, 138, 138);
+    }
+    form{
+        background-color: white;
+        max-width: 500px;
+        width: 70%;
+        padding: 20px;
+        position: absolute;
+        left: 50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+    }
+    form h3{
+        text-align: center;
+        color:rgb(187, 176, 176);
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    form input[type=text],
+    form input[type=password]{
+        width: 100%;
+        height: 45px;
+        border: 1px solid #ccc;
+        padding-left: 10px;
+        margin: 10px 0;
+    }
+    form input[type=submit]{
+        width: 100%;
+        height: 40px;
+        cursor: pointer;
+        background: rgb(105, 104, 105);
+        color: rgb(247, 240, 240);
+        border: 0; 
+        border-radius: 20px;
+        transition: 1s;
+    }
+    form input[type=submit]:hover{
+        background-color: #294c5f;
+    }
+
+</style>
 <body>
-    <div>
-        <h1 id="titulo">Cadastro de DEVs</h1>
-        <p id="subtitulo">Complete suas informações</p>
-        <br>
-    </div>
     <form>
-        <fieldset class="grupo">
-            <div class="campo">
-                <label for="nome">Nome</label>
-                <input type="text" name="nome" id="nome" required >
-            </div>
-
-            <div>
-                <label for="sobrenome">Sobrenome</label>
-                <input type="text" name="sobrenome" id="sobrenome" required>
-            </div>
-
-        </fieldset>
-
-        <div>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
-        </div>
-
-        <div>
-            <label>De qual lado da aplicação você desenvolve? </label>
-            <label>
-                <input type="radio" name="devweb" value="frontend"checkead>Front-End
-            </label>
-            <label>
-                <input type="radio" name="devweb" value="backend">Back-End
-            </label>
-            <label>
-                <input type="radio" name="devweb" value="Fullstack">Fullstack
-            </label>
-        </div>
-
-        <div>
-            <label for="senioridade">Senioridade</label> 
-            <select id="Senioridade">
-                <option>Junior</option>
-                <option>Pleno</option>
-                <option>Senior</option>
-            </select>
-        </div>
-
-        <fieldset class="grupo">
-            <div id="check">
-                <label>Selecione as tecnologias que utiliza:</label><br>
-                <input type="checkbox" id="tecnologia1" name="tecnologia1" value="HTML">
-                <label for="tecnologia1">HTML</label>
-                <input type="checkbox" id="tecnologia2" name="tecnologia2" value="css">
-                <label for="tecnologia2">CSS</label>
-                <input type="checkbox" id="tecnologia3" name="tecnologia3" value="Javascript">
-                <label for="tecnologia3">Javascript</label>
-                <input type="checkbox" id="tecnologia4" name="tecnologia4" value="PHP">
-                <label for="tecnologia4">PHP</label>
-                <input type="checkbox" id="tecnologia5" name="tecnologia5" value="C#">
-                <label for="tecnologia5">C#</label>
-                <input type="checkbox" id="tecnologia6" name="tecnologia6" value="Python">
-                <label for="tecnologia6">Python</label>
-                <input type="checkbox" id="tecnologia7" name="tecnologia7" value="Java">
-                <label for="tecnologia7">Java</label>
-            </div>
-        </fieldset>
-
-        <div>
-            <br>
-            <label>Conte um pouco da sua experiência</label>
-            <textarea rows="6" style="width: 26em;" id="experiência" name="experiência"></textarea>
-        </div>
-
-        <button class="botao" type="submit">Concluido</button>
+        <h3>Entrar em contato</h3>
+         <input id= "email" type="text" name="email" placeholder="Seu e-mail..." />
+         <input type="password" name="senha" placeholder="sua senha..." />
+         <input type="submit" name="ação" value="Enviar" />   
     </form>
-    
+    <script>
+        var email = document.getElementById('email');
+        email.addEventListener('focus',()=>{
+            email.style.bordercolor="#4A5F6A";  
+        });
+    </script>   
 </body>
 </html>
